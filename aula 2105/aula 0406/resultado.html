@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resultado</title>
+    <link rel="stylesheet" href="css/style_resultado.css">
+</head>
+
+<body>
+
+<div class="resut">
+
+     <h2>resultados da inscrição</h2>
+     <p><strong>nome:</strong> <span id="resnome"></span></p>
+     <p><strong>idade:</strong> <span id="residade"></span></p>
+     <p><strong>mensagem:</strong> <span id="resmensagem"></span></p>
+     <p><strong>aventura favorita:</strong> <span id="resaventura"></span></p>
+
+</div>
+
+<script>
+    // função para obter parametros da URL
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search)
+        return {
+            nome: params.get('nome'),
+            idade: params.get('idade'),
+            mensagem: params.get('mensagem'),
+            aventura: params.get('aventura')
+        };
+
+    }
+
+    // obter os parametros da URL
+    const params = getQueryParams();
+
+    // exibir os dados capturados na página
+    document.getElementById('resnome').textContent = params.nome;
+    document.getElementById('residade').textContent = params.idade;
+    document.getElementById('resmensagem').textContent = params.mensagem;
+    document.getElementById('resaventura').textContent = params.aventura;
+ 
+
+
+</script>
+
+</body>
+
+</html>
